@@ -6,6 +6,8 @@ import 'package:my_portfolio/styles/styles.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_%20mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
+import 'package:my_portfolio/widgets/main_desktop.dart';
+import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,7 +27,8 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : DrawerMobile(),
+          endDrawer:
+              constraints.maxWidth >= kMinDesktopWidth ? null : DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
@@ -39,6 +42,10 @@ class _HomePageState extends State<HomePage> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                MainDesktop()
+              else
+                MainMobile(),
               //SKILLS
               Container(
                 height: 500,
