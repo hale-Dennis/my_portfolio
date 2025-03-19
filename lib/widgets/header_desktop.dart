@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/styles/styles.dart';
 import 'package:my_portfolio/widgets/site_logo.dart';
@@ -17,13 +13,11 @@ class HeaderDesktop extends StatelessWidget {
     return Container(
       height: 60,
       width: double.maxFinite,
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: kHeaderDecoration,
       child: Row(
         children: [
-          SiteLogo(
-            onTap: () {},
-          ),
+          SiteLogo(onTap: () {}),
           Spacer(),
           for (int i = 0; i < navTitles.length; i++)
             Padding(

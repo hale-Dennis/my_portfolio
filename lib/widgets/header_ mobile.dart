@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/site_logo.dart';
 
@@ -7,6 +5,7 @@ import '../styles/styles.dart';
 
 class HeaderMobile extends StatelessWidget {
   const HeaderMobile({super.key, this.onLogoTap, this.onMenuTap});
+
   final VoidCallback? onLogoTap;
   final VoidCallback? onMenuTap;
 
@@ -18,13 +17,10 @@ class HeaderMobile extends StatelessWidget {
       decoration: kHeaderDecoration,
       child: Row(
         children: [
-          SiteLogo(
-            onTap: onLogoTap,
-          ),
+          SiteLogo(onTap: onLogoTap),
           Spacer(),
-          IconButton(onPressed: onMenuTap,
-            icon: Icon(Icons.menu),),
-          SizedBox(width: 15,),
+          IconButton(onPressed: onMenuTap, icon: Icon(Icons.menu)),
+          SizedBox(width: 15),
         ],
       ),
     );
